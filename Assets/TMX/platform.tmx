@@ -4,7 +4,7 @@
   <property name="test map property" type="float" value="12.43"/>
  </properties>
  <tileset firstgid="1" source="images/tilemap/platform.tsx"/>
- <imagelayer id="5" name="Image" offsetx="-286.998" offsety="1427.06">
+ <imagelayer id="5" name="Image" offsetx="0" offsety="1130">
   <image source="../Image/ZombieEscape.png" width="2542" height="1431"/>
   <properties>
    <property name="image layer property" value="buns"/>
