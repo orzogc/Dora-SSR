@@ -13,8 +13,9 @@ jobs:
     if: "!contains(github.event.head_commit.message, '[skip CI]') && !contains(github.event.head_commit.message, '[skip iOS]')"
     steps:
       - uses: actions/checkout@v2
+      - uses: dtolnay/rust-toolchain@stable
       - name: iOS build
         run: |
           Tools/tolua++/build.sh
+          Tools/build-scripts/build_lib_ios.sh
           xcodebuild -project Projects/iOS/Dora.xcodeproj -configuration Debug -target Simulator -arch x86_64 -sdk iphonesimulator
-      
