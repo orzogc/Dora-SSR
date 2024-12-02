@@ -18,4 +18,4 @@ jobs:
         run: |
           Tools/tolua++/build.sh
           Tools/build-scripts/build_lib_ios.sh
-          xcodebuild -project Projects/iOS/Dora.xcodeproj -configuration Debug -target Simulator -arch x86_64 -sdk iphonesimulator
+          xcodebuild -project Projects/iOS/Dora.xcodeproj -configuration Debug -target Simulator -sdk iphonesimulator
