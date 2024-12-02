@@ -26,8 +26,6 @@ jobs:
         cd ./Tools/tolua++
         lua tolua++.lua
     - uses: dtolnay/rust-toolchain@stable
-    - name: Build Rust lib
-      run: Tools/build-scripts/build_lib_linux_x86_64.sh
     - name: Make
       run: |
         cd Projects/Linux
