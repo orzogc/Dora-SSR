@@ -33,10 +33,7 @@ release:
 	$(MAKE) -C build
 
 lib_x86_64:
-	command -v rustup >/dev/null 2>&1 || (curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y && . "$HOME/.cargo/env")
 	../../Tools/build-scripts/build_lib_linux_x86_64.sh
 
 lib_arm:
-	command -v rustup >/dev/null 2>&1 || (curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y && . "$HOME/.cargo/env")
 	../../Tools/build-scripts/build_lib_linux_aarch64.sh
-
