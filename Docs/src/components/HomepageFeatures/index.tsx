@@ -31,7 +31,7 @@ const PromotionFeatureList: FeatureItem[] = [
 			<Translate
 				id='feature_description_two'
 				description='The feature description two in front page'>
-				Start Developing on Portable Devices Anywhere, with Lightning Speed!
+				Developing Games on Portable Devices Anywhere, with Lightning Speed!
 			</Translate>
 		),
 	},
@@ -73,7 +73,7 @@ function PromotionFeature({title, Svg, image, description}: FeatureItem) {
 	return (
 		<div className={clsx('col col--4 padding-bottom--md')}>
 			<div className={styles.promotionFeature}>
-				<div className="text--center padding-top--sm padding-bottom--sm">
+				<div className="padding-top--sm padding-bottom--md">
 					{Svg ? <Svg className={styles.featureImg} role="img"/> : image}
 				</div>
 				<div className={clsx('text--left', styles.cardText)}>
