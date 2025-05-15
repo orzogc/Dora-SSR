@@ -15,6 +15,12 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 #include "Other/xlsxtext.hpp"
 
+extern "C" {
+char* WaBuild(char* input);
+char* WaFormat(char* input);
+void WaFreeCString(char* str);
+} // extern "C"
+
 NS_DORA_BEGIN
 
 #define DoraVersion(major, minor, patch) ((major) << 16 | (minor) << 8 | (patch))
@@ -2049,6 +2055,32 @@ bool WasmRuntime::isInWasm() {
 
 uint8_t* WasmRuntime::getMemoryAddress(int32_t wasmAddr) {
 	return _runtime->get_address(wasmAddr);
+}
+
+void WasmRuntime::buildWaAsync(String fullPath, const std::function<void(String)>& callback) {
+	SharedAsyncThread.run([fullPath = fullPath.toString()]() {
+		auto result = WaBuild(c_cast<char*>(fullPath.c_str()));
+		std::string data(result);
+		WaFreeCString(result);
+		return Values::alloc(std::move(data));
+	}, [callback](Own<Values> values) {
+		std::string data;
+		values->get(data);
+		callback(data);
+	});
+}
+
+void WasmRuntime::formatWaAsync(String fullPath, const std::function<void(String)>& callback) {
+	SharedAsyncThread.run([fullPath = fullPath.toString()]() {
+		auto result = WaFormat(c_cast<char*>(fullPath.c_str()));
+		std::string data(result);
+		WaFreeCString(result);
+		return Values::alloc(std::move(data));
+	}, [callback](Own<Values> values) {
+		std::string data;
+		values->get(data);
+		callback(data);
+	});
 }
 
 NS_DORA_END

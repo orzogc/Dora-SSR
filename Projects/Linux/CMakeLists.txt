@@ -2,6 +2,7 @@ cmake_minimum_required(VERSION 3.5.0)
 project(Dora-SSR)
 
 set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_VERBOSE_MAKEFILE ON)
 
 find_package(SDL2 REQUIRED)
 find_package(OpenSSL REQUIRED)
@@ -53,6 +54,12 @@ add_library(BIMGDE-lib STATIC IMPORTED)
 set_target_properties(
 	BIMGDE-lib PROPERTIES IMPORTED_LOCATION
 	${CMAKE_SOURCE_DIR}/3rdParty/libs/libbimg_decodeRelease.a
+)
+
+add_library(WA-lib STATIC IMPORTED)
+set_target_properties(
+	WA-lib PROPERTIES IMPORTED_LOCATION
+	${CMAKE_SOURCE_DIR}/3rdParty/libs/libwa.a
 )
 
 add_library(DORA-lib STATIC IMPORTED)
@@ -610,5 +617,5 @@ add_executable(dora-ssr
 	../../Source/3rdParty/nfd/nfd_portal.cpp
 )
 
-target_link_libraries(dora-ssr z dl pthread rt ${SDL2_LIBRARIES} BGFX-lib BIMGDE-lib BIMG-lib BX-lib GL X11 OpenSSL::SSL OpenSSL::Crypto ${DBUS_LINK_LIBRARIES} DORA-lib)
+target_link_libraries(dora-ssr z dl pthread rt ${SDL2_LIBRARIES} BGFX-lib BIMGDE-lib BIMG-lib BX-lib GL X11 OpenSSL::SSL OpenSSL::Crypto ${DBUS_LINK_LIBRARIES} DORA-lib WA-lib)
 

@@ -64,6 +64,12 @@ set_target_properties(
 	${CMAKE_CURRENT_SOURCE_DIR}/src/main/cpp/3rdParty/OpenSSL/Lib/Android/${ANDROID_ABI}/libcrypto.a
 )
 
+add_library(WA-lib SHARED IMPORTED)
+set_target_properties(
+	WA-lib PROPERTIES IMPORTED_LOCATION
+	${CMAKE_CURRENT_SOURCE_DIR}/src/main/cpp/3rdParty/Wa/Lib/Android/${ANDROID_ABI}/libwa.so
+)
+
 add_library(DORA-lib STATIC IMPORTED)
 set_target_properties(
 	DORA-lib PROPERTIES IMPORTED_LOCATION
@@ -614,4 +620,4 @@ add_library(main SHARED
 	src/main/cpp/3rdParty/tmxlite/detail/pugixml.cpp
 )
 
-target_link_libraries(main android log EGL z GLESv1_CM GLESv2 SDL2-lib BGFX-lib BIMGDE-lib BIMG-lib BX-lib CRYPTO-lib SSL-lib DORA-lib)
+target_link_libraries(main android log EGL z GLESv1_CM GLESv2 SDL2-lib BGFX-lib BIMGDE-lib BIMG-lib BX-lib CRYPTO-lib SSL-lib WA-lib DORA-lib)

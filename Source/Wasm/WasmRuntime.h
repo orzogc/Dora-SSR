@@ -61,7 +61,7 @@ public:
 	PROPERTY_READONLY_CALL(Scheduler*, PostScheduler);
 	PROPERTY_READONLY_CALL(Scheduler*, Scheduler);
 	PROPERTY_READONLY(uint32_t, MemorySize);
-	~WasmRuntime();
+	virtual ~WasmRuntime();
 	bool executeMainFile(String filename);
 	void executeMainFileAsync(String filename, const std::function<void(bool)>& handler);
 	void invoke(int32_t funcId);
@@ -71,6 +71,9 @@ public:
 	void clear();
 	uint8_t* getMemoryAddress(int32_t wasmAddr);
 	static bool isInWasm();
+
+	void buildWaAsync(String fullPath, const std::function<void(String)>& callback);
+	void formatWaAsync(String fullPath, const std::function<void(String)>& callback);
 
 protected:
 	WasmRuntime();
