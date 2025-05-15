@@ -636,6 +636,33 @@ export default function PersistentDrawerLeft() {
 				inferLang = ext;
 				break;
 		}
+		if (ext === "wa") {
+			const {key} = file;
+			editor.addAction({
+				id: "dora-action-format",
+				label: t("editor.format"),
+				keybindings: [
+					monaco.KeyCode.KeyK | monaco.KeyMod.CtrlCmd,
+					monaco.KeyCode.KeyK | monaco.KeyMod.WinCtrl,
+				],
+				contextMenuGroupId: "navigation",
+				contextMenuOrder: 2,
+				run: async function() {
+					const model = editor.getModel();
+					if (model === null) return;
+					const wres = await Service.write({path: key, content: model.getValue()});
+					if (!wres.success) return;
+					const res = await Service.formatWa({file: key});
+					if (res.success) {
+						model.pushStackElement();
+						model.pushEditOperations(null, [{
+							text: res.code,
+							range: model.getFullModelRange()
+						}], () => {return null});
+					}
+				}
+			});
+		}
 		if (inferLang !== null) {
 			const lang = inferLang;
 			editor.addAction({

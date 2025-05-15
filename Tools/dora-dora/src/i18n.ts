@@ -121,7 +121,8 @@ i18n
 					},
 					editor: {
 						goToDefinition: "Go to Definition",
-						require: "Import this module",
+						require: "Import This Module",
+						format: "Format Code",
 					},
 					menu: {
 						version: "Dora SSR version {{version}}",
@@ -332,6 +333,7 @@ i18n
 					editor: {
 						goToDefinition: "跳转到定义",
 						require: "导入该模块",
+						format: "格式化代码",
 					},
 					menu: {
 						version: "Dora SSR 版本号 {{version}}",

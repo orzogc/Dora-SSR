@@ -567,6 +567,7 @@
 		3CBC785024CE7528003C9E83 /* Spine in Resources */ = {isa = PBXBuildFile; fileRef = 3CBC784824CE7527003C9E83 /* Spine */; };
 		3CBC785124CE7528003C9E83 /* Model in Resources */ = {isa = PBXBuildFile; fileRef = 3CBC784924CE7527003C9E83 /* Model */; };
 		3CBC785224CE7528003C9E83 /* Font in Resources */ = {isa = PBXBuildFile; fileRef = 3CBC784A24CE7527003C9E83 /* Font */; };
+		3CBED0992DD5C0A100E6F2FC /* dora-wa in Resources */ = {isa = PBXBuildFile; fileRef = 3CBED0982DD5C08B00E6F2FC /* dora-wa */; };
 		3CC81FF61D966770008C8B77 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3CC81FF51D966770008C8B77 /* Assets.xcassets */; };
 		3CD029141E07DD5F0016E1EC /* libbgfx.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CD029131E07DD5F0016E1EC /* libbgfx.a */; };
 		3CD029161E07DD720016E1EC /* libSDL2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CD029151E07DD720016E1EC /* libSDL2.a */; };
@@ -1945,6 +1946,7 @@
 		3CBC784824CE7527003C9E83 /* Spine */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Spine; sourceTree = "<group>"; };
 		3CBC784924CE7527003C9E83 /* Model */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Model; sourceTree = "<group>"; };
 		3CBC784A24CE7527003C9E83 /* Font */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Font; sourceTree = "<group>"; };
+		3CBED0982DD5C08B00E6F2FC /* dora-wa */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "dora-wa"; sourceTree = "<group>"; };
 		3CC81FE61D966770008C8B77 /* Dora.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dora.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3CC81FF51D966770008C8B77 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Dora/Assets.xcassets; sourceTree = "<group>"; };
 		3CC81FFA1D966770008C8B77 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = Dora/Info.plist; sourceTree = "<group>"; };
@@ -2032,6 +2034,7 @@
 		3C030CD824CAD9670074786E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				3CBED0982DD5C08B00E6F2FC /* dora-wa */,
 				3CE994632AFA43680073A973 /* gamecontrollerdb.txt */,
 				3CA780A02AEB82B100B7BADA /* LICENSES */,
 				3C361E1B2C1A94A50079B68B /* TMX */,
@@ -4387,6 +4390,7 @@
 				3CA780A12AEB82B100B7BADA /* LICENSES in Resources */,
 				3CE994642AFA43680073A973 /* gamecontrollerdb.txt in Resources */,
 				3CC81FF61D966770008C8B77 /* Assets.xcassets in Resources */,
+				3CBED0992DD5C0A100E6F2FC /* dora-wa in Resources */,
 				3CA8DF0D2A0CE6FD0022CC90 /* www in Resources */,
 				3CBC784F24CE7528003C9E83 /* Particle in Resources */,
 				3C0C774B27573F350030BDCD /* Data in Resources */,
